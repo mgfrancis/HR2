@@ -17,22 +17,17 @@
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}"method="post">
         
+        <input type="text" name="MonthlyIncome" placeholder="Monthly Income" required="required" />
+        <input type="text" name="TotalWorkingYears" placeholder="No of Years Worked" required="required" />
         <input type="text" name="Age" placeholder="Age" required="required" />
-        <input type="text" name="DistanceFromHome" placeholder="DistanceFromHome" required="required" />
-        <input type="text" name="TotalWorkingYears" placeholder="TotalWorkingYears" required="required" />
-        <input type="text" name="YearsInCurrentRole" placeholder="YearsInCurrentRole" required="required" />
+        <input type="text" name="NumCompaniesWorked" placeholder="No of Companies Worked" required="required" />
+        <input type="text" name="DistanceFromHome" placeholder="Distance from Home" required="required" />
+        <input type="text" name="YearsAtCompany" placeholder="Years at Company" required="required" />
         <input type="text" name="OverTime_No" placeholder="OverTime_No" required="required" />
         <input type="text" name="OverTime_Yes" placeholder="OverTime_Yes" required="required" />
-        <input type="text" name="JobLevel" placeholder="JobLevel" required="required" />
-        <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction" required="required" />
-        <input type="text" name="MonthlyIncome" placeholder="MonthlyIncome" required="required" />
-        <input type="text" name="StandardHours" placeholder="StandardHours" required="required" />
-        <input type="text" name="WorkLifeBalance" placeholder="WorkLifeBalance" required="required" />
-        <input type="text" name="YearsSinceLastPromotion" placeholder="YearsSinceLastPromotion" required="required" />
-        <input type="text" name="YearsWithCurrManager" placeholder="YearsWithCurrManager" required="required" />
-
-
-          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </form>
     <br>
     <br>
