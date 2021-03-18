@@ -48,18 +48,17 @@
     <h1>Predict </h1>
 
       <!-- Main Input For Receiving Query to our ML -->
-      <!-- <form action="{{ url_for('predict')}}"method="post"> -->
         <form action="{{ url_for ('predict') }}" method="POST">
         
         <input type="text" name="Age" placeholder="Age" required="required" />
         <input type="text" name="DistanceFromHome" placeholder="DistanceFromHome" required="required" />
         <input type="text" name="TotalWorkingYears" placeholder="TotalWorkingYears" required="required" />
         <input type="text" name="YearsInCurrentRole" placeholder="YearsInCurrentRole" required="required" />
-        <input type="text" name="JobLevel" placeholder="JobLevel" required="required" />
-        <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction" required="required" />
+        <input type="text" name="JobLevel" placeholder="JobLevel (1-Lowest, 4-Highest)" required="required" />
+        <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction (1-Lowest, 4-Highest)" required="required" />
         <input type="text" name="MonthlyIncome" placeholder="MonthlyIncome" required="required" />
         <input type="text" name="StandardHours" placeholder="StandardHours" required="required" />
-        <input type="text" name="WorkLifeBalance" placeholder="WorkLifeBalance" required="required" />
+        <input type="text" name="WorkLifeBalance" placeholder="WorkLifeBalance (1-Lowest, 4-Highest)" required="required" />
         <input type="text" name="YearsSinceLastPromotion" placeholder="YearsSinceLastPromotion" required="required" />
         <input type="text" name="YearsWithCurrManager" placeholder="YearsWithCurrManager" required="required" />
 
@@ -69,6 +68,30 @@
     <br>
     <br>
     {{ prediction_text }}
+    <br>
+    <br>
+    {{ age_text }}
+    <br>
+    {{ distance_text }}
+    <br> 
+    {{ level_text}}
+    <br>
+    {{ satisfaction_text }}
+    <br>
+    {{ income_text }}
+    <br>
+    {{ hours_text }}
+    <br>
+    {{ workyears_text }}
+    <br>
+    {{ balance_text }}
+    <br>
+    {{ role_text }}
+    <br>
+    {{ promotion_text }}
+    <br>
+    {{ mgr_text }}
+    
 
 
     </div>

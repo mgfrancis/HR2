@@ -72,8 +72,21 @@ def predict():
                 'YearsWithCurrManager': mgr
             }, result=prediction,
         
-        prediction_text='Attrition Likelihood: {}'.format(prediction)) # rendering the predicted result 
-
+        prediction_text='Attrition Likelihood: {}'.format(prediction),  #returns the values entered
+        age_text='Age: {}'.format(age),
+        distance_text='DistanceFromHome: {}'.format(distance), 
+        level_text='JobLevel: {}'.format(level), 
+        satisfaction_text='JobSatisfaction: {}'.format(satisfaction),
+        income_text='MonthlyIncome: {}'.format(income), 
+        hours_text='StandardHours: {}'.format(hours), 
+        workyears_text='TotalWorkingYears: {}'.format(workyears),
+        balance_text='WorkLifeBalance: {}'.format(balance),
+        role_text = 'YearsInCurrentRole: {}'.format(role),
+        promotion_text = 'YearsSinceLastPromotion: {}'.format(promotion),
+        mgr_text = 'YearsWithCurrManager: {}'.format(mgr)
+        )
+        
+         # rendering the predicted result 
     # retrieving values from form
     # init_features = [float(x) for x in request.form.values()]
     # final_features = [np.array(init_features)]
