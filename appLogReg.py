@@ -53,8 +53,8 @@ def predict():
         role = request.form['YearsInCurrentRole']
         promotion = request.form['YearsSinceLastPromotion']
         mgr = request.form['YearsWithCurrManager']
-        otimeno = request.form['OverTime_No']
-        otimeyes = request.form['OverTime_Yes']
+        otimeno = request.form['Overtime_No']
+        otimeyes = request.form['Overtime_Yes']
         numco = request.form['NumCompaniesWorked']
         yearsco = request.form['YearsAtCompany']
 
@@ -78,9 +78,9 @@ def predict():
         
         #SequentialRegressionPrediction
         if predmodel.predict(input_variables2)[0][1] >= .5:
-            prediction2 = 'Yes'
+            prediction = 'Yes'
         else: 
-            prediction2 = 'No'
+            prediction = 'No'
 
         #return Prediction
         return render_template('machinelearning.html', original_input = {
@@ -94,15 +94,10 @@ def predict():
                 'WorkLifeBalance': balance,
                 'YearsInCurrentRole': role,
                 'YearsSinceLastPromotion': promotion,
-                'YearsWithCurrManager': mgr,
-                'NumCompaniesWorked': numco,
-                'YearsAtCompany': yearsco,
-                'OverTime_No': otimeno,
-                'OverTime_Yes': otimeyes
+                'YearsWithCurrManager': mgr
             }, result=prediction,
-
-        LRprediction_text='Attrition Likelihood (Logistic Regression): {}'.format(prediction),  #returns the values entered
-        SMprediction_text='Attrition Likelihood (Sequential Model): {}'.format(prediction2),
+        
+        prediction_text='Attrition Likelihood: {}'.format(prediction),  #returns the values entered
         age_text='Age: {}'.format(age),
         distance_text='DistanceFromHome: {}'.format(distance), 
         level_text='JobLevel: {}'.format(level), 
@@ -113,11 +108,7 @@ def predict():
         balance_text='WorkLifeBalance: {}'.format(balance),
         role_text = 'YearsInCurrentRole: {}'.format(role),
         promotion_text = 'YearsSinceLastPromotion: {}'.format(promotion),
-        mgr_text = 'YearsWithCurrManager: {}'.format(mgr),
-        numco_text = 'NumCompaniesWorked: {}'.format(numco),
-        yearsco_text = 'YearsAtCompany: {}'.format(yearsco),
-        otimeno_text = 'OverTime_No: {}'.format(otimeno),
-        otimeyes_text= 'OverTime_Yes: {}'.format(otimeyes)
+        mgr_text = 'YearsWithCurrManager: {}'.format(mgr)
         )
         
 

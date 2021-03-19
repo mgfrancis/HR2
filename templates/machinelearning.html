@@ -59,18 +59,24 @@
         <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction (1-Lowest, 4-Highest)" required="required" />
         <br>
         <input type="text" name="MonthlyIncome" placeholder="MonthlyIncome" required="required" />
-        <input type="text" name="StandardHours" placeholder="StandardHours" required="required" />
+        <input type="text" name="StandardHours" placeholder="StandardHours (max: 80)" required="required" />
         <input type="text" name="WorkLifeBalance" placeholder="WorkLifeBalance (1-Lowest, 4-Highest)" required="required" />
         <br>
         <input type="text" name="YearsSinceLastPromotion" placeholder="YearsSinceLastPromotion" required="required" />
         <input type="text" name="YearsWithCurrManager" placeholder="YearsWithCurrManager" required="required" />
-
+        <input type="text" name="NumCompaniesWorked" placeholder="NumCompaniesWorked" required="required" />
+        <br>
+        <input type="text" name='YearsAtCompany' placeholder='YearsAtCompany' required="required" />
+        <input type="text" name='OverTime_No' placeholder='Overtime_No (0-Yes, 1-No)' required="required" />
+        <input type="text" name="OverTime_Yes" placeholder="Overtime_Yes (0-Yes, 1-No)" required="required" />
         <br>
           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </form>
     <br>
     <br>
-    {{ prediction_text }}
+    {{ LRprediction_text }}
+    <br>
+    {{ SMprediction_text }}
     <br>
     <br>
     {{ age_text }}
@@ -94,6 +100,15 @@
     {{ promotion_text }}
     <br>
     {{ mgr_text }}
+    <br>
+    {{ numco_text }}
+    <br>
+    {{ yearsco_text }}
+    <br>
+    {{ otimeno_text }}
+    <br>
+    {{ otimeyes_text }}
+    
     
 
 
