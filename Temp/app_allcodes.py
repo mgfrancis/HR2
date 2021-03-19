@@ -70,7 +70,16 @@ def predict():
                     'MonthlyIncome', 'StandadHours', 'TotalWorkingYears','WorkLifeBalance',
                     'YearsInCurrentRole','YearsSinceLastPromotion','YearsWithCurrManager'],
                     dtype=float)
-            
+        
+
+
+
+        # input_variables = pd.DataFrame([[age, distance, level, satisfaction,
+        #             income, hours, workyears,balance,role,promotion,mgr]],
+        #             columns=['age', 'distance', 'level', 'satisfaction',
+        #             'income', 'hours', 'workyears','balance','role','promotion','mgr'],
+        #             dtype=float)
+        
         #LogisticRegressionPrediction
         prediction = model.predict(input_variables)[0]
         
@@ -80,7 +89,15 @@ def predict():
                 columns=['MonthlyIncome', 'TotalWorkingYears', 'Age', 'NumCompaniesWorked',
                 'DistanceFrormHome', 'YearsAtCompany', 'OverTime_No', 'OverTime_Yes'],
                 dtype=float)
-                
+        
+
+        #input variables for Sequential
+        # input_variables2 = pd.DataFrame([[income, workyears, age, numco,
+        #         distance, yearsco, otimeno, otimeyes]],
+        #         columns=['income', 'workyears', 'age', 'numco',
+        #         'distance', 'yearsco', 'otimeno', 'otimeyes'],
+        #         dtype=float)
+        
         #SequentialRegressionPrediction
         if predmodel.predict(input_variables2)[0][1] >= .5:
             prediction2 = 'Yes'
@@ -125,6 +142,21 @@ def predict():
         otimeyes_text= 'OverTime_Yes: {}'.format(otimeyes)
         )
         
+
+
+
+         # rendering the predicted result 
+    # retrieving values from form
+    # init_features = [float(x) for x in request.form.values()]
+    # final_features = [np.array(init_features)]
+
+    # prediction = model.predict(final_features) # making prediction
+
+    # class_ = np.where(predictions == np.amax(predictions, axis=1))[1][0]
+
+    # return render_template('machinelearning.html', prediction_text='Attrition Likelihood: {}'.format(prediction), pred=class_) # rendering the predicted result
+
+
 @app.route('/past')
 def past():
     print("/past")
@@ -135,6 +167,8 @@ def past():
 def project():
     print("/project")
     return render_template('project.html')
+
+
 
 
 if __name__ == "__main__":
