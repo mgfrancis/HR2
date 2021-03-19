@@ -73,7 +73,8 @@ def predict():
             
         #LogisticRegressionPrediction
         prediction = model.predict(input_variables)[0]
-        
+
+                
         #input variables for Sequential
         input_variables2 = pd.DataFrame([[income, workyears, age, numco,
                 distance, yearsco, otimeno, otimeyes]],
@@ -81,12 +82,14 @@ def predict():
                 'DistanceFrormHome', 'YearsAtCompany', 'OverTime_No', 'OverTime_Yes'],
                 dtype=float)
                 
+              
         #SequentialRegressionPrediction
         if predmodel.predict(input_variables2)[0][1] >= .5:
             prediction2 = 'Yes'
         else: 
             prediction2 = 'No'
 
+        
         #return Prediction
         return render_template('machinelearning.html', original_input = {
                 'Age' : age,
@@ -107,6 +110,7 @@ def predict():
             }, result=prediction, result2=prediction2,
 
         prediction_text='Attrition Likelihood (Logistic Regression): {}'.format(prediction),  #returns the values entered
+        #accuracy_text='test: {}'.format(accuracy),
         prediction2_text='Attrition Likelihood (Sequential Model): {}'.format(prediction2),
         age_text='Age: {}'.format(age),
         distance_text='DistanceFromHome: {}'.format(distance), 

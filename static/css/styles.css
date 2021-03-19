@@ -41,7 +41,7 @@ h1, p{
 }
 
 .hero1{
-    background-image: url("/info/img/pexels-canva-studio-3194519.jpg");
+    background-image: url("/static/img/pexels-canva-studio-3194519.jpg");
     
 }
 .hero::after{
@@ -58,12 +58,13 @@ h1, p{
     z-index:1;
 }
 .hero2{
-    background-image: url("/info/img/pexels-fauxels-3184291.jpg");
+    background-image: url("/static/img/pexels-fauxels-3184291.jpg");
+    
    
 }
 
 .hero3{
-    background-image: url("/info/img/pexels-fauxels-3184357.jpg");
+    background-image: url("/static/img/pexels-fauxels-3184357.jpg");
    
 }
 .carousel-control-next-icon, .carousel-control-prev-icon{
@@ -123,3 +124,26 @@ h1, p{
     text-align: center;
     margin-bottom:0%
 }
+
+.login h1{
+    text-align:center;
+    
+}
+
+/* Setting machinelearning input form font size */
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 13px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 9pt; 
+}
+
+ ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size: 12px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    font-size: 9pt; 
+}
+ 
